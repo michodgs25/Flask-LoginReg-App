@@ -1,5 +1,7 @@
-from flask import Blueprint, render_template, redirect, url_for, request
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask import (Blueprint, render_template,
+                   redirect, url_for, request, flash)
+from werkzeug.security import (generate_password_hash,
+                               check_password_hash)
 from .models import User
 from . import db
 
@@ -16,6 +18,7 @@ def signup_post():
     if user:
         # if a user is found,
         # we want to redirect back to signup page so user can try again
+        flash('Email address already exists')
         return redirect(url_for('auth.signup'))
 
     # create a new user with the form data.
@@ -29,4 +32,3 @@ def signup_post():
     db.session.commit()
 
     return redirect(url_for('auth.login'))
-
