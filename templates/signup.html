@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% extends "base.html" %}
 {% with messages = get_flashed_messages() %}
 {% if messages %}
@@ -12,6 +13,7 @@
     <div class="column is-4 is-offset-4">
         <h3 class="title">Sign Up</h3>
         <div class="box">
+            
             <form action="" method="POST">
                 <!--Email-->
                 <div class="field">
@@ -33,11 +35,12 @@
                         <input type="password" name="password" placeholder="Password" />
                     </div>
                 </div>
-
+            
                 <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
                 <h3>Already Have an Account?</h3><br>
                 <h6><a href="{{url_for('login')}}">Login Here</a></h6>
             </form>
         </div>
     </div>
+</form>
     {% endblock %}
