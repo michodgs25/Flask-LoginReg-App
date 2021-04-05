@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-    Flask Login Example
-</h1>
-<h2 class="subtitle">
-    Easy authentication and authorization in Flask.
-</h2>
+<h2>Welcome to the Blog</h2>
+ 
+<h3>Hi {{ current_user.username }}</h3>
+ 
+<a href="{{ url_for('logout')}}">Logout Here</a>
 {% endblock %}
