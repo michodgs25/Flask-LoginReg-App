@@ -23,7 +23,7 @@ def create_all():
 
 @app.route('/index')
 @login_required
-def blog():
+def index():
     return render_template('index.html')
 
 
